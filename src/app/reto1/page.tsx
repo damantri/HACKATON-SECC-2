@@ -13,41 +13,18 @@ export default function Reto1() {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
-      <h1>Progress bar</h1>
+    <div className="flex flex-col items-center justify-center h-screen space-y-6">
+      <h1 className="text-3xl font-semibold">Progress bar</h1>
 
-      <div
-        style={{
-          position: 'relative',
-          width: '60%',
-          margin: '30px auto',
-          height: '30px',
-          backgroundColor: '#d3d3d3',
-          borderRadius: '15px',
-        }}
-      >
+      <div className="relative w-3/5 h-8 bg-gray-300 rounded-full overflow-hidden">
         <div
-          style={{
-            height: '100%',
-            width: `${progress}%`,
-            backgroundColor: '#ff6b6b',
-            borderRadius: '15px',
-            transition: 'width 0.3s ease',
-            position: 'relative',
-          }}
+          className="h-full bg-red-400 transition-all duration-300 rounded-full"
+          style={{ width: `${progress}%` }}
         >
           <span
+            className="absolute -top-6 left-[calc(var(--pos)_-_10px)] bg-red-400 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md"
             style={{
-              position: 'absolute',
-              right: '-35px',
-              top: '-25px',
-              backgroundColor: '#ff6b6b',
-              color: 'white',
-              padding: '5px 8px',
-              borderRadius: '50%',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              boxShadow: '0 0 5px rgba(0,0,0,0.3)',
+              left: `calc(${progress}% - 20px)`,
             }}
           >
             {progress}%
@@ -55,8 +32,10 @@ export default function Reto1() {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="input">Input Percentage: </label>
+      <div className="flex items-center gap-3">
+        <label htmlFor="input" className="font-medium">
+          Input Percentage:
+        </label>
         <input
           id="input"
           type="number"
@@ -64,14 +43,7 @@ export default function Reto1() {
           max="100"
           value={progress}
           onChange={handleChange}
-          style={{
-            padding: '8px',
-            border: '2px solid black',
-            borderRadius: '20px',
-            width: '80px',
-            textAlign: 'center',
-            outline: 'none',
-          }}
+          className="w-20 border-2 border-gray-500 rounded-full text-center p-1 outline-none focus:border-blue-500"
         />
       </div>
     </div>
