@@ -192,3 +192,101 @@ html.dark .analyzer__input {
   .analyzer__footer { flex-direction: column; }
 }
 
+
+
+/* --- Quote Carousel --- */
+.quote {
+  width: 100%;
+  background: transparent;
+}
+.quote__bar {
+  height: 12px;
+  background: #e07a2d;
+  border-radius: 6px 6px 0 0;
+}
+.quote__bar--bottom {
+  border-radius: 0 0 6px 6px;
+  margin-top: 16px;
+}
+
+.quote__card {
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  padding: 28px;
+  position: relative;
+}
+html.dark .quote__card {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.09);
+}
+
+.quote__mark {
+  position: absolute;
+  left: 22px;
+  top: 8px;
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--fg);
+  opacity: .6;
+}
+
+.quote__text {
+  margin: 18px 0 10px 0;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.5;
+}
+.quote__author {
+  margin: 8px 0 14px 0;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.quote__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.quote__nav {
+  display: flex;
+  gap: 10px;
+}
+.circle-btn {
+  width: 40px; height: 40px;
+  display: grid; place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #111827;
+  border: 1px solid rgba(0,0,0,.1);
+  cursor: pointer;
+}
+html.dark .circle-btn {
+  background: #0f172a;
+  color: #f8fafc;
+  border-color: rgba(255,255,255,.12);
+}
+.circle-btn:active { transform: translateY(1px); }
+
+.quote__share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.share-btn {
+  display: inline-grid; place-items: center;
+  width: 32px; height: 32px; border-radius: 999px;
+  background: #e2e8f0; color: #0f172a; font-weight: 900;
+  text-decoration: none;
+}
+html.dark .share-btn { background: #1f2937; color: #f8fafc; }
+
+.quote__dots {
+  display: flex; gap: 6px; justify-content: center; margin-top: 18px;
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: #cbd5e1; border: none; cursor: pointer;
+}
+.dot--active { background: #e07a2d; }
