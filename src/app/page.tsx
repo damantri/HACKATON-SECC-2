@@ -3,21 +3,33 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main style={{ textAlign: 'center', marginTop: '100px' }}>
-      <h1>Índice</h1>
-      <p>Selecciona un reto:</p>
+    <main className="flex flex-col items-center justify-center h-screen text-center">
+      <h1 className="text-3xl font-bold mb-4">Índice</h1>
+      <p className="mb-6">Selecciona un reto:</p>
       <Link
         href="/reto1"
-        style={{
-          padding: '10px 20px',
-          backgroundColor: '#0070f3',
-          color: 'white',
-          borderRadius: '8px',
-          textDecoration: 'none',
-        }}
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
       >
         Reto 1 - Progress Bar
       </Link>
-    </main>
-  );
+      <Link
+        href="/reto2"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+      >
+        Reto 2 - clicks en 10s
+      </Link>
+      <Link
+        href="/reto4"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+      >
+        Reto 4 - Dark Mode Toggle
+      </Link>
+      <Link
+        href="/reto6"
+        className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+      >
+        Reto 6 - Text Analyzer
+      </Link>
+    </main>
+  );
 }
